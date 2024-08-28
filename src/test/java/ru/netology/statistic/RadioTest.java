@@ -129,6 +129,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void theMaxVolumeShouldBeSet() {
         Radio cond = new Radio();
@@ -140,6 +141,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void theMinVolumeShouldBeSet() {
         Radio cond = new Radio();
@@ -151,6 +153,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotSetVolumeAboveMax() {
         Radio cond = new Radio();
@@ -162,6 +165,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void shouldNotSetVolumeBelowMin() {
         Radio cond = new Radio();
@@ -186,6 +190,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void theSoundVolumeHasIncreased_2() {
         Radio cond = new Radio();
@@ -198,6 +203,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void theSoundVolumeHasIncreased_3() {
         Radio cond = new Radio();
@@ -210,6 +216,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void theVolumeOfTheSoundHasDecreased_1() {
         Radio cond = new Radio();
@@ -222,6 +229,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void theVolumeOfTheSoundHasDecreased_2() {
         Radio cond = new Radio();
@@ -234,6 +242,7 @@ public class RadioTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void theVolumeOfTheSoundHasDecreased_3() {
         Radio cond = new Radio();
