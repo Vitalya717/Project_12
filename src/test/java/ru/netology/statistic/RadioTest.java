@@ -4,34 +4,32 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RadioTest {
+    Radio cond = new Radio();
 
     @Test
     public void shouldSetMaxRadioStation() {
-        Radio cond = new Radio();
 
-        cond.maxNumberRadioStation();
+        cond.setNumberCurrentRadioStation(9);
 
         int expected = 9;
-        int actual = cond.getNumberCurrentRadioStation();
+        int actual = cond.getMaxNumberRadioStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldSetMinRadioStation() {
-        Radio cond = new Radio();
 
-        cond.minNumberRadioStation();
+        cond.setNumberCurrentRadioStation(0);
 
         int expected = 0;
-        int actual = cond.getNumberCurrentRadioStation();
+        int actual = cond.getMinNumberRadioStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldNotSetRadioStationAboveMax() {
-        Radio cond = new Radio();
 
         cond.setNumberCurrentRadioStation(10);
 
@@ -43,7 +41,7 @@ public class RadioTest {
 
     @Test
     public void shouldNotSetRadioStationBelowMin() {
-        Radio cond = new Radio();
+
         cond.setNumberCurrentRadioStation(-1);
 
         int expected = 9;
@@ -54,7 +52,6 @@ public class RadioTest {
 
     @Test
     public void theNumberOfTheCurrentRadioStationHasIncreased_1() {
-        Radio cond = new Radio();
 
         cond.setNumberCurrentRadioStation(0);
         cond.valueRadioStationUp();
@@ -67,7 +64,6 @@ public class RadioTest {
 
     @Test
     public void theNumberOfTheCurrentRadioStationHasIncreased_2() {
-        Radio cond = new Radio();
 
         cond.setNumberCurrentRadioStation(8);
         cond.valueRadioStationUp();
@@ -80,7 +76,6 @@ public class RadioTest {
 
     @Test
     public void theNumberOfTheCurrentRadioStationHasIncreased_3() {
-        Radio cond = new Radio();
 
         cond.setNumberCurrentRadioStation(9);
         cond.valueRadioStationUp();
@@ -93,7 +88,6 @@ public class RadioTest {
 
     @Test
     public void theNumberOfTheCurrentRadioStationHasDecreased_1() {
-        Radio cond = new Radio();
 
         cond.setNumberCurrentRadioStation(0);
         cond.valueRadioStationDown();
@@ -106,7 +100,6 @@ public class RadioTest {
 
     @Test
     public void theNumberOfTheCurrentRadioStationHasDecreased_2() {
-        Radio cond = new Radio();
 
         cond.setNumberCurrentRadioStation(9);
         cond.valueRadioStationDown();
@@ -119,7 +112,6 @@ public class RadioTest {
 
     @Test
     public void theNumberOfTheCurrentRadioStationHasDecreased_3() {
-        Radio cond = new Radio();
 
         cond.setNumberCurrentRadioStation(1);
         cond.valueRadioStationDown();
@@ -132,31 +124,28 @@ public class RadioTest {
 
     @Test
     public void theMaxVolumeShouldBeSet() {
-        Radio cond = new Radio();
 
-        cond.maxSoundVolumeRadio();
+        cond.setSoundVolumeRadio(100);
 
         int expected = 100;
-        int actual = cond.getSoundVolumeRadio();
+        int actual = cond.getMaxSoundVolumeRadio();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void theMinVolumeShouldBeSet() {
-        Radio cond = new Radio();
 
-        cond.minSoundVolumeRadio();
+        cond.setSoundVolumeRadio(0);
 
         int expected = 0;
-        int actual = cond.getSoundVolumeRadio();
+        int actual = cond.getMinSoundVolumeRadio();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
     public void shouldNotSetVolumeAboveMax() {
-        Radio cond = new Radio();
 
         cond.setSoundVolumeRadio(101);
 
@@ -168,7 +157,6 @@ public class RadioTest {
 
     @Test
     public void shouldNotSetVolumeBelowMin() {
-        Radio cond = new Radio();
 
         cond.setSoundVolumeRadio(-1);
 
@@ -180,7 +168,6 @@ public class RadioTest {
 
     @Test
     public void theSoundVolumeHasIncreased_1() {
-        Radio cond = new Radio();
 
         cond.setSoundVolumeRadio(99);
         cond.increaseVolume();
@@ -193,7 +180,6 @@ public class RadioTest {
 
     @Test
     public void theSoundVolumeHasIncreased_2() {
-        Radio cond = new Radio();
 
         cond.setSoundVolumeRadio(0);
         cond.increaseVolume();
@@ -206,7 +192,6 @@ public class RadioTest {
 
     @Test
     public void theSoundVolumeHasIncreased_3() {
-        Radio cond = new Radio();
 
         cond.setSoundVolumeRadio(100);
         cond.increaseVolume();
@@ -219,7 +204,6 @@ public class RadioTest {
 
     @Test
     public void theVolumeOfTheSoundHasDecreased_1() {
-        Radio cond = new Radio();
 
         cond.setSoundVolumeRadio(1);
         cond.downVolume();
@@ -232,7 +216,6 @@ public class RadioTest {
 
     @Test
     public void theVolumeOfTheSoundHasDecreased_2() {
-        Radio cond = new Radio();
 
         cond.setSoundVolumeRadio(100);
         cond.downVolume();
@@ -245,7 +228,6 @@ public class RadioTest {
 
     @Test
     public void theVolumeOfTheSoundHasDecreased_3() {
-        Radio cond = new Radio();
 
         cond.setSoundVolumeRadio(0);
         cond.downVolume();
