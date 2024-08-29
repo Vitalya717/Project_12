@@ -7,6 +7,14 @@ public class RadioTest {
     Radio cond = new Radio();
 
     @Test
+    public void TheRequiredNumberOfRadioStationsShouldBeInstalled() {
+
+        Radio cond = new Radio(5);
+
+        Assertions.assertEquals(5, cond.getNumberCurrentRadioStation());
+    }
+
+    @Test
     public void shouldSetMaxRadioStation() {
 
         cond.setNumberCurrentRadioStation(9);

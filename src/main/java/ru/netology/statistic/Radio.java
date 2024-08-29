@@ -2,7 +2,6 @@ package ru.netology.statistic;
 
 public class Radio {
 
-    private int soundVolumeRadio;
 
     private int maxNumberRadioStation = 9;
 
@@ -13,6 +12,8 @@ public class Radio {
     private int maxSoundVolumeRadio = 100;
 
     private int minSoundVolumeRadio = 0;
+
+    private int soundVolumeRadio;
 
     public Radio(int numberCurrentRadioStation) {
         this.numberCurrentRadioStation = numberCurrentRadioStation;
