@@ -9,7 +9,7 @@ public class RadioTest {
     @Test
     public void TheRequiredNumberOfRadioStationsShouldBeInstalled() {
 
-        Radio cond = new Radio(20, 0,20);
+        Radio cond = new Radio(20);
         cond.setNumberCurrentRadioStation(15);
 
         Assertions.assertEquals(15, cond.getNumberCurrentRadioStation());
