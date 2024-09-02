@@ -15,10 +15,10 @@ public class Radio {
 
     private int soundVolumeRadio;
 
-    public Radio(int maxNumberRadioStation) {
+    public Radio(int numberCurrentRadioStation) {
 
-        this.maxNumberRadioStation = maxNumberRadioStation;
-
+        this.numberCurrentRadioStation = numberCurrentRadioStation;
+        this.maxNumberRadioStation = numberCurrentRadioStation;
     }
 
     public Radio() {
