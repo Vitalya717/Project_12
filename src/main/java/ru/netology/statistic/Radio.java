@@ -23,8 +23,9 @@ public class Radio {
     public Radio() {
     }
 
-    public Radio(int maxNumberRadioStation) {
-        this.maxNumberRadioStation = maxNumberRadioStation;
+    public Radio(int numberCurrentRadioStation) {
+        this.numberCurrentRadioStation = numberCurrentRadioStation;
+        this.maxNumberRadioStation = numberCurrentRadioStation;
     }
 
     public void setNumberCurrentRadioStation(int newNumberCurrentRadioStation) {
