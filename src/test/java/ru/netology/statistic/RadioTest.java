@@ -4,21 +4,84 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 public class RadioTest {
-    Radio cond = new Radio(20);
+    Radio cond = new Radio();
 
     @Test
-    public void shouldSetMaxRadioStation() {
+    public void setTheRequiredNumberOfRadioStations() {
 
+        Radio cond = new Radio(20);
+        cond.setNumberCurrentRadioStation(15);
+
+        Assertions.assertEquals(15, cond.getNumberCurrentRadioStation());
+    }
+
+    @Test
+    public void setTheMinRadioStation() {
+
+        Radio cond = new Radio(20);
+        cond.setNumberCurrentRadioStation(0);
+
+        Assertions.assertEquals(0, cond.getNumberCurrentRadioStation());
+    }
+
+    @Test
+    public void setTheNexRadioStationAfterTheMin() {
+
+        Radio cond = new Radio(20);
+        cond.setNumberCurrentRadioStation(1);
+
+        Assertions.assertEquals(1, cond.getNumberCurrentRadioStation());
+    }
+
+    @Test
+    public void turnOnTheNextRadioStationAfterTheMin() {
+
+        Radio cond = new Radio(20);
+        cond.setNumberCurrentRadioStation(-1);
+
+        Assertions.assertEquals(19, cond.getNumberCurrentRadioStation());
+    }
+
+    @Test
+    public void setTheMaxRadioStation() {
+
+        Radio cond = new Radio(20);
+        cond.setNumberCurrentRadioStation(19);
+
+        Assertions.assertEquals(19, cond.getNumberCurrentRadioStation());
+    }
+
+    @Test
+    public void setTheNexRadioStationAfterTheMax() {
+
+        Radio cond = new Radio(20);
+        cond.setNumberCurrentRadioStation(18);
+
+        Assertions.assertEquals(18, cond.getNumberCurrentRadioStation());
+    }
+
+    @Test
+    public void turnOnTheNextRadioStationAfterTheMax() {
+
+        Radio cond = new Radio(20);
         cond.setNumberCurrentRadioStation(20);
 
-        int expected = 20;
+        Assertions.assertEquals(0, cond.getNumberCurrentRadioStation());
+    }
+
+    @Test
+    public void setMaxRadioStation() {
+
+        cond.setNumberCurrentRadioStation(9);
+
+        int expected = 9;
         int actual = cond.getMaxNumberRadioStation();
 
         Assertions.assertEquals(expected, actual);
     }
 
     @Test
-    public void shouldSetMinRadioStation() {
+    public void setMinRadioStation() {
 
         cond.setNumberCurrentRadioStation(0);
 
@@ -31,7 +94,7 @@ public class RadioTest {
     @Test
     public void shouldNotSetRadioStationAboveMax() {
 
-        cond.setNumberCurrentRadioStation(25);
+        cond.setNumberCurrentRadioStation(10);
 
         int expected = 0;
         int actual = cond.getNumberCurrentRadioStation();
@@ -44,7 +107,7 @@ public class RadioTest {
 
         cond.setNumberCurrentRadioStation(-1);
 
-        int expected = 20;
+        int expected = 9;
         int actual = cond.getNumberCurrentRadioStation();
 
         Assertions.assertEquals(expected, actual);
@@ -65,10 +128,10 @@ public class RadioTest {
     @Test
     public void theNumberOfTheCurrentRadioStationHasIncreased_2() {
 
-        cond.setNumberCurrentRadioStation(18);
+        cond.setNumberCurrentRadioStation(8);
         cond.valueRadioStationUp();
 
-        int expected = 19;
+        int expected = 9;
         int actual = cond.getNumberCurrentRadioStation();
 
         Assertions.assertEquals(expected, actual);
@@ -77,7 +140,7 @@ public class RadioTest {
     @Test
     public void theNumberOfTheCurrentRadioStationHasIncreased_3() {
 
-        cond.setNumberCurrentRadioStation(20);
+        cond.setNumberCurrentRadioStation(9);
         cond.valueRadioStationUp();
 
         int expected = 0;
@@ -92,7 +155,7 @@ public class RadioTest {
         cond.setNumberCurrentRadioStation(0);
         cond.valueRadioStationDown();
 
-        int expected = 20;
+        int expected = 9;
         int actual = cond.getNumberCurrentRadioStation();
 
         Assertions.assertEquals(expected, actual);
@@ -101,10 +164,10 @@ public class RadioTest {
     @Test
     public void theNumberOfTheCurrentRadioStationHasDecreased_2() {
 
-        cond.setNumberCurrentRadioStation(20);
+        cond.setNumberCurrentRadioStation(9);
         cond.valueRadioStationDown();
 
-        int expected = 19;
+        int expected = 8;
         int actual = cond.getNumberCurrentRadioStation();
 
         Assertions.assertEquals(expected, actual);
