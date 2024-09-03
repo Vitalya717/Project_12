@@ -7,7 +7,7 @@ public class RadioTest {
     Radio cond = new Radio();
 
     @Test
-    public void TheRequiredNumberOfRadioStationsShouldBeInstalled() {
+    public void setTheRequiredNumberOfRadioStations() {
 
         Radio cond = new Radio(20);
         cond.setNumberCurrentRadioStation(15);
@@ -16,7 +16,61 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetMaxRadioStation() {
+    public void setTheMinRadioStation() {
+
+        Radio cond = new Radio(20);
+        cond.setNumberCurrentRadioStation(0);
+
+        Assertions.assertEquals(0, cond.getNumberCurrentRadioStation());
+    }
+
+    @Test
+    public void setTheNexRadioStationAfterTheMin() {
+
+        Radio cond = new Radio(20);
+        cond.setNumberCurrentRadioStation(1);
+
+        Assertions.assertEquals(1, cond.getNumberCurrentRadioStation());
+    }
+
+    @Test
+    public void turnOnTheNextRadioStationAfterTheMin() {
+
+        Radio cond = new Radio(20);
+        cond.setNumberCurrentRadioStation(-1);
+
+        Assertions.assertEquals(19, cond.getNumberCurrentRadioStation());
+    }
+
+    @Test
+    public void setTheMaxRadioStation() {
+
+        Radio cond = new Radio(20);
+        cond.setNumberCurrentRadioStation(19);
+
+        Assertions.assertEquals(19, cond.getNumberCurrentRadioStation());
+    }
+
+    @Test
+    public void setTheNexRadioStationAfterTheMax() {
+
+        Radio cond = new Radio(20);
+        cond.setNumberCurrentRadioStation(18);
+
+        Assertions.assertEquals(18, cond.getNumberCurrentRadioStation());
+    }
+
+    @Test
+    public void turnOnTheNextRadioStationAfterTheMax() {
+
+        Radio cond = new Radio(20);
+        cond.setNumberCurrentRadioStation(20);
+
+        Assertions.assertEquals(0, cond.getNumberCurrentRadioStation());
+    }
+
+    @Test
+    public void setMaxRadioStation() {
 
         cond.setNumberCurrentRadioStation(9);
 
@@ -27,7 +81,7 @@ public class RadioTest {
     }
 
     @Test
-    public void shouldSetMinRadioStation() {
+    public void setMinRadioStation() {
 
         cond.setNumberCurrentRadioStation(0);
 
